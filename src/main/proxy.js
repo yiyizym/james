@@ -27,6 +27,7 @@ class ProxyHandler extends EventEmitter {
   createHoxy() {
     const opts = {};
     try {
+      console.log('appConfig.userData(app) ', appConfig.userData(app));
       const key = fs.readFileSync(`${appConfig.userData(app)}/root-ca.key.pem`);
       const cert = fs.readFileSync(`${appConfig.userData(app)}/root-ca.crt.pem`);
       opts.certAuthority = {key, cert};

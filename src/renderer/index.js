@@ -9,7 +9,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ConnectedRouter as Router } from 'react-router-redux';
-import createHistory from 'history/createHashHistory';
+import { createHashHistory } from 'history';
 import * as Sentry from '@sentry/browser';
 
 import config from '../common/config.js';
@@ -30,7 +30,7 @@ import './resources/style/main.scss';
 
 sentryInit(remote.app, Sentry);
 
-const history = createHistory();
+const history = createHashHistory();
 const store = setupStore(history);
 
 ipc.on('proxy-new-request', (evt, payload) => {

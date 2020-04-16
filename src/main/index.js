@@ -53,7 +53,10 @@ app.on('ready', () => {
     width: 1024,
     height: 768,
     autoHideMenuBar: true,
-    show: false
+    show: false,
+    webPreferences: {
+      nodeIntegration: true
+    }
   });
 
   let rendererURL = `file://${__dirname}/index.html`;
